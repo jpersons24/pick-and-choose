@@ -6,6 +6,8 @@ Purpose:
 
 - The idea behind the app:
    - User can sign up
+      - creating account by signing up with new name or just logging in with existing account
+      
    - User can choose from character blueprint OR choose to build their own character from scratch
    - User can choose items to equip there character with
    - User will be able to see all items, and items currently equipped to their character

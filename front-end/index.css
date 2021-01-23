@@ -1,0 +1,26 @@
+body {
+   /* background-color: #adceba; */
+   background: linear-gradient(189deg, #adceba, #0b470e);
+}
+
+.nav-bar-item {
+   display: inline-block;
+}
+
+.right {
+   float: right;
+}
+
+#nav-bar-list {
+   list-style: none inside;
+}
+
+#nav-bar {
+   border: 12px double #48805e;
+   border-radius: 20px;
+}
+
+.logo { 
+   font-family: 'Cinzel', serif;
+   font-size: 30px;
+}
