@@ -9,7 +9,7 @@
       <script defer src="index.js"></script>
    </head>
    <body>
-      <div id="nav-bar">
+      <!-- <div id="nav-bar">
          <h3 id="logo">Pick and Choose</h3>
          <form id="login-form">
             <input type="text" name="name" placeholder="Your name" value="">
@@ -21,7 +21,33 @@
 
       <div id="characters"></div>
 
-      <div id="items-container"></div>
+      <div id="items-container"></div> -->
 
+      <div class="parent">
+         <div id="nav-bar">
+            <ul id="nav-bar-list">
+               <li class="nav-bar-li logo">Pick and Choose</li>
+               <li class="nav-bar-li right">Create a Character</li>
+               <li class="nav-bar-li right">Create an Item</li>
+            </ul>
+            <form id="login-form">
+               <input type="text" name="name" placeholder="Your name" value="">
+               <input type="submit" value="Login">
+            </form>
+         </div>
+         <div id="character-display">
+            <h3>Character Name</h3>
+         </div>
+         <div id="character-container"> 
+            <h3>Characters</h3>
+         </div>
+         <div id="current-items"> 
+            <h4>Character Items</h4>
+         </div>
+         <div id="available-items"> 
+            <h3>Items</h3>
+         </div>
+      
+      </div>
    </body>
 </html>

@@ -34,30 +34,17 @@ function renderAllChars(allChars) {
    })
 }
 
-function checkForUser(allUsers, input) {
-   allUsers.forEach(user => {
-      if (user.name === input){
-         userDiv.innerHTML += 
-         `<div id="user-card" data-id="${user.id}">
-            <p>${user.name}</p>
-         </div>`
-         console.log(user.name)
-      } // else if (user.name)
-   })
-}
+// **** login form handler ****
+// function checkForUser(allUsers, input) {
+//    allUsers.forEach(user => {
+      
+//    })
+// }
 
 
 
 // NETWORK REQUESTS
 
-// function getAllUsers() {
-//    fetch("http://localhost:3000/users")
-//    .then(response => response.json())
-//    .then(allUsers => {
-//       console.log('Got all the users!')
-//       getSingleUser(allUsers)
-//    })
-// }
 
 function getAllCharacters() {
    fetch("http://localhost:3000/characters")
@@ -77,6 +64,8 @@ function getAllCharacters() {
 
 // EVENT LISTENERS
 
+
+// **** login form event listener ****
 loginForm.addEventListener('submit', function(event) {
 
    event.preventDefault()
