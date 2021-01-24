@@ -1,19 +1,21 @@
 // VARIABLES
 
-const usersContainer = document.querySelector('#users-div')
+const userDiv = document.querySelector('#users-div')
 const charactersContainer = document.querySelector('#characters')
+const loginForm = document.querySelector('#login-form')
 
 
-// RENDER FUNCTIONS
 
-function getSingleUser(allUsers) {
-   allUsers.forEach(user => {
-      usersContainer.innerHTML += 
-         `<div id="user-card" data-id="${user.id}">
-            <p>${user.name}</p>
-         </div>`
-   })
-}
+// RENDER AND LOGIC FUNCTIONS
+
+// function getSingleUser(allUsers) {
+//    allUsers.forEach(user => {
+//       userDiv.innerHTML += 
+//          `<div id="user-card" data-id="${user.id}">
+//             <p>${user.name}</p>
+//          </div>`
+//    })
+// }
 
 function renderAllChars(allChars) {
    allChars.forEach(char => {
@@ -32,18 +34,30 @@ function renderAllChars(allChars) {
    })
 }
 
+function checkForUser(allUsers, input) {
+   allUsers.forEach(user => {
+      if (user.name === input){
+         userDiv.innerHTML += 
+         `<div id="user-card" data-id="${user.id}">
+            <p>${user.name}</p>
+         </div>`
+         console.log(user.name)
+      } // else if (user.name)
+   })
+}
+
 
 
 // NETWORK REQUESTS
 
-function getAllUsers() {
-   fetch("http://localhost:3000/users")
-   .then(response => response.json())
-   .then(allUsers => {
-      console.log('Got all the users!')
-      getSingleUser(allUsers)
-   })
-}
+// function getAllUsers() {
+//    fetch("http://localhost:3000/users")
+//    .then(response => response.json())
+//    .then(allUsers => {
+//       console.log('Got all the users!')
+//       getSingleUser(allUsers)
+//    })
+// }
 
 function getAllCharacters() {
    fetch("http://localhost:3000/characters")
@@ -55,6 +69,27 @@ function getAllCharacters() {
 }
 
 
-      // NETWORK REQUEST FUNCTION CALLS
-      getAllUsers()
+// ** NETWORK REQUEST FUNCTION CALLS **
       getAllCharacters()
+
+
+
+
+// EVENT LISTENERS
+
+loginForm.addEventListener('submit', function(event) {
+
+   event.preventDefault()
+
+   let input = event.target.name.value
+
+   fetch("http://localhost:3000/users")
+   .then(response => response.json())
+   .then(allUsers => {
+      // console.log(allUsers)
+      // console.log(input)
+      checkForUser(allUsers, input)
+   })
+
+   event.target.reset()
+})

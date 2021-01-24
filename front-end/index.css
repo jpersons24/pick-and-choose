@@ -1,18 +1,7 @@
 body {
    /* background-color: #adceba; */
-   background: linear-gradient(189deg, #adceba, #0b470e);
-}
-
-.nav-bar-item {
-   display: inline-block;
-}
-
-.right {
-   float: right;
-}
-
-#nav-bar-list {
-   list-style: none inside;
+   background: linear-gradient(225deg, #adceba, #0b470e);
+   font-family: 'Cinzel', serif;
 }
 
 #nav-bar {
@@ -20,7 +9,15 @@ body {
    border-radius: 20px;
 }
 
-.logo { 
+#logo { 
+   text-align: center;
    font-family: 'Cinzel', serif;
    font-size: 30px;
 }
+
+#login-form {
+   padding-bottom: 20px;
+   padding-left: 20px;
+   display: inline-block;
+}
+
