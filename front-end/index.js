@@ -1,7 +1,6 @@
 // VARIABLES
 
-const userDiv = document.querySelector('#users-div')
-const charactersContainer = document.querySelector('#characters')
+const charactersContainer = document.querySelector('#character-container')
 const loginForm = document.querySelector('#login-form')
 
 
@@ -20,16 +19,8 @@ const loginForm = document.querySelector('#login-form')
 function renderAllChars(allChars) {
    allChars.forEach(char => {
       charactersContainer.innerHTML += 
-         `<div id="char-card">
-            <p>Created by: ${char.user.name}</p>
-            <ul id="char-list">
-               <li>Name: ${char.name}</li>
-               <li>Birthplace: ${char.birthplace}</li>
-               <li>Bio: ${char.bio}</li>
-               <li>Health Points: ${char.health_points}</li>
-               <li>Attack Points: ${char.attack_points}</li>
-               <li>Defense Points: ${char.defense_points}</li>
-            </ul>
+         `<div class="char-card">
+            <p class="char-name">${char.name}</p>
          </div>`
    })
 }
@@ -65,20 +56,34 @@ function getAllCharacters() {
 // EVENT LISTENERS
 
 
+// charactersContainer.addEventListener('click', function(event){
+//    // console.log(event.target)
+//    // console.log(event.target.closest('div.char-card'))
+
+//    if(event.target.matches('p.char-name')) {
+//       // console.log(event.target)
+//       // console.log(event.target.closest('div.char-card'))
+//       let charCard = event.target.closest('div.chard-card')
+//       charCard.innerHTML += 
+         
+//    }
+// })
+
+
 // **** login form event listener ****
-loginForm.addEventListener('submit', function(event) {
+// loginForm.addEventListener('submit', function(event) {
 
-   event.preventDefault()
+//    event.preventDefault()
 
-   let input = event.target.name.value
+//    let input = event.target.name.value
 
-   fetch("http://localhost:3000/users")
-   .then(response => response.json())
-   .then(allUsers => {
-      // console.log(allUsers)
-      // console.log(input)
-      checkForUser(allUsers, input)
-   })
+//    fetch("http://localhost:3000/users")
+//    .then(response => response.json())
+//    .then(allUsers => {
+//       // console.log(allUsers)
+//       // console.log(input)
+//       checkForUser(allUsers, input)
+//    })
 
-   event.target.reset()
-})
+//    event.target.reset()
+// })
