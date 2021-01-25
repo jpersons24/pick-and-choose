@@ -2,19 +2,11 @@
 
 const charactersContainer = document.querySelector('#character-container')
 const loginForm = document.querySelector('#login-form')
+const availItems = document.querySelector('#available-items')
 
 
 
 // RENDER AND LOGIC FUNCTIONS
-
-// function getSingleUser(allUsers) {
-//    allUsers.forEach(user => {
-//       userDiv.innerHTML += 
-//          `<div id="user-card" data-id="${user.id}">
-//             <p>${user.name}</p>
-//          </div>`
-//    })
-// }
 
 function renderAllChars(allChars) {
    allChars.forEach(char => {
@@ -25,17 +17,17 @@ function renderAllChars(allChars) {
    })
 }
 
-// **** login form handler ****
-// function checkForUser(allUsers, input) {
-//    allUsers.forEach(user => {
-      
-//    })
-// }
-
+function renderAllItems(allItems) {
+   allItems.forEach(item => {
+      availItems.innerHTML += 
+         `<div class="item-card">
+            <p>${item.name}</p>
+         </div>`
+   })
+}
 
 
 // NETWORK REQUESTS
-
 
 function getAllCharacters() {
    fetch("http://localhost:3000/characters")
@@ -46,9 +38,19 @@ function getAllCharacters() {
    })
 }
 
+function getAllItems() {
+   fetch("http://localhost:3000/items")
+   .then(response => response.json())
+   .then(allItems => {
+      // console.log(allItems)
+      renderAllItems(allItems)
+   })
+}
+
 
 // ** NETWORK REQUEST FUNCTION CALLS **
       getAllCharacters()
+      getAllItems()
 
 
 
