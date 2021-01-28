@@ -38,7 +38,7 @@ body {
    grid-row-gap: 0px;
    height: 100%;
    width: 100%;
-   }
+}
    
 #nav-bar { 
    grid-area: 1 / 1 / 2 / 6; 
